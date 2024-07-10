@@ -1,4 +1,4 @@
-FROM node:16-alpine3.14 as build-stage
+FROM node:16.15.1-alpine3.14 as build-stage
 
 LABEL name "Express App (Docker Build)"
 LABEL maintainer "KagChi"
@@ -17,7 +17,7 @@ RUN npm run build
 
 RUN npm prune --production
 
-FROM node:16-alpine3.14
+FROM node:16.15.1-alpine3.14
 
 LABEL name "Express App Production"
 LABEL maintainer "KagChi"
